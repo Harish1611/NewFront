@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+
+    <title>Book a Call</title>
+
+    <style>
+        body{
+
+            background-image: url(https://wpadventure.com/wp-content/uploads/2018/07/Untitled-123.jpg);
+            background-size: cover;
+            font-family: 'Josefin Sans';font-size: 22px;
+        }
+
+        form{
+            background-color: aliceblue;
+            margin:5% 20%;
+            padding: 10px 50px;
+            border: 2px solid purple;
+            border-radius: 10px;
+            padding-bottom: 40px;
+
+           
+        }
+        input {
+           line-height: 2em; 
+        }
+       
+        h2{
+            text-align:center;
+            color:purple
+        }
+        p{
+            text-align:center;
+            color:gray;
+            font-size: 20px;
+        }
+
+        #submitbtn{
+
+            width:100%;
+            background-color: purple;
+            border: 1px white solid;
+            border-radius: 4px;
+            color:white;
+            font-family: josefin sans;
+            font-size: 20px;
+            
+        }
+        .full{
+            width: 98%;
+        }
+        .half{
+            display: inline-block;
+           width:48%;
+        }
+
+        .labelClass{
+            color:purple;
+            font-size: 20px;
+           line-height: 40px;
+        
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <form action="" onsubmit="getACall(event)">
+
+        <h2> Book a Call</h2>
+        <p> Book a call slot and our representative call you within 1hr of selected time</p>
+    
+        <label for="fname" class="labelClass">Name:</label>
+        <br>
+        <input type="text" id="fname" class="full" height="20px"name="fname">
+        <br>
+        <label for="email" class="labelClass">Email:</label>
+        <br>
+        <input type="email" id="email" class="full" name="email">
+        <br>
+        <label for="pNumber" class="labelClass">Phone:</label>
+        <br>
+        <input type="tel" id="pNumber" class="full" name="pNumber">
+        <br>
+        <label for="callTime" class="labelClass">Time for call:</label>
+        <br>
+        <input type="date" id="callTime" class="half" name="callOfTime" placeholder="16-11-2000">
+        <input type="time" id="callTime" class="half" name="callTimeOfDate">
+        <br>
+        <br>
+        <input type="submit" id="submitbtn" value="Get a call">
+        
+    </form>
+
+    <script>
+        function getACall(event){
+            event.preventDefault(); // It will stop the form from refresh the data, so that event data will not be lost after submission 
+            console.log(
+            "_______Book A Call_______"+"\n" 
+            +"\n"+"Name:" + event.target.fname.value 
+            +"\n"+"Email:" +event.target.email.value
+            +"\n"+"Phone Number:" +event.target.pNumber.value
+            +"\n"+"Time for Call:"
+            +"\n"+"Date:" +event.target.callOfTime.value
+            +"\n"+"Time:" +event.target.callTimeOfDate.value);
+        }
+    </script>
+    
+</body>
+</html>

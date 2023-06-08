@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+
+         <!-- BootStrap CSS CDN -->
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <title>Book a Call</title>
+
+    <style>
+        body{
+
+            background-image: url(https://wpadventure.com/wp-content/uploads/2018/07/Untitled-123.jpg);
+            background-size: cover;
+            font-family: 'Josefin Sans';font-size: 22px;
+        }
+/* 
+        form{
+            background-color: aliceblue;
+            margin:5% 20%;
+            padding: 10px 50px;
+            border: 2px solid purple;
+            border-radius: 10px;
+            padding-bottom: 40px;
+
+           
+        } */
+         /*
+        input {
+           line-height: 2em; 
+        }
+       
+        h2{
+            text-align:center;
+            color:purple
+        }
+        p{
+            text-align:center;
+            color:gray;
+            font-size: 20px;
+        }
+
+        #submitbtn{
+
+            width:100%;
+            background-color: purple;
+            border: 1px white solid;
+            border-radius: 4px;
+            color:white;
+            font-family: josefin sans;
+            font-size: 20px;
+            
+        }
+        .full{
+            width: 98%;
+        }
+        .half{
+            display: inline-block;
+           width:48%;
+        }
+
+        .labelClass{
+            color:purple;
+            font-size: 20px;
+           line-height: 40px;
+        
+        } */
+
+        h2{
+            text-align: center;
+            color:purple;
+        }
+
+        p{
+            text-align:center;
+            color:gray;
+            font-size: 20px;
+        }
+        label{
+            color:purple;
+            font-size: 20px;
+           line-height: 40px;
+        
+        }
+
+        .sb-btn{
+            background-color: purple;
+            color:white;  
+        }
+
+        .borderclr{
+            border: 4px solid purple;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container ">
+    <div class="d-flex justify-content-center ">
+    <form action="" class="bg-light borderclr rounded-4 m-3 p-5" onsubmit="getACall(event)" novalidate>
+
+        <h2> Book a Call</h2>
+        <p> Book a call slot and our representative call you within 1hr of selected time</p>
+    
+        <label for="fname" class="form-label">Name:</label>
+        <input type="text" id="fname" class="form-control" height="20px"name="fname" required>
+        <!-- <div class="invalid-feedback">Invalid Name</div>
+        <div class="valid-feedback">Correct Name</div> -->
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" id="email" class="form-control" name="email" required>
+        <div class="invalid-feedback">Invalid Email</div>
+         
+        <label for="pNumber" class="form-label">Phone:</label>
+        <input type="tel" id="pNumber" class="form-control" name="pNumber" required>
+        <label for="callTime" class="form-label">Time for call:</label>
+       <div class="row">
+         <div class="col">
+           <input type="date" id="callTime" class="form-control" name="callOfTime" placeholder="16-11-2000" required>
+         </div>
+
+         <div class="col">
+           <input type="time" id="callTime" class="form-control" name="callTimeOfDate" required>
+         </div>
+    </div>
+
+    <div class="d-grid gap-2 pt-3">
+        <input type="submit" class="btn btn-light sb-btn " value="Get a call">
+    </div>   
+    </form>
+</div></div>
+    <script>
+        // Data Validation
+        const form = document.querySelector("form");
+        form.addEventListener('submit', e => {
+            if(!form.checkValidity()){
+                e.preventDefault();
+            }
+
+            form.classList.add('was-validated');
+        })
+
+        // Display data on Console
+        function getACall(event){
+            event.preventDefault(); // It will stop the form from refresh the data, so that event data will not be lost after submission 
+            console.log(
+            "_______Book A Call_______"+"\n" 
+            +"\n"+"Name:" + event.target.fname.value 
+            +"\n"+"Email:" +event.target.email.value
+            +"\n"+"Phone Number:" +event.target.pNumber.value
+            +"\n"+"Time for Call:"
+            +"\n"+"Date:" +event.target.callOfTime.value
+            +"\n"+"Time:" +event.target.callTimeOfDate.value);
+        }
+    </script>
+    <!-- BootStrap JS CDN -->   
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
