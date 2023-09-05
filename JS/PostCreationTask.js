@@ -1,5 +1,4 @@
-const posts = [{title: 'POST1'}];
-//Do not touch this function
+const posts = [];
 function create2ndPost() {
     return new Promise( (resolve, reject) => {
         setTimeout( () => {
@@ -8,7 +7,6 @@ function create2ndPost() {
         }, 3000)
     }) 
 }
-//Do not touch this function
 function create3rPost() {
     return new Promise( (resolve, reject) => {
         setTimeout( () => {
@@ -18,7 +16,6 @@ function create3rPost() {
     }) 
 }
 
-//Do not touch this function
 function deletePost(){
     return new Promise((resolve, reject) => {
         setTimeout( () => {
